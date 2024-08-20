@@ -1,12 +1,11 @@
 import getSinglePost from '@/lib/getSinglePost';
-import React from 'react';
 
 export async function generateMetadata({ params }) {
     const bike = await getSinglePost(params.id);
     return {
         title: bike?.name || 'Bike Details',
         description: bike?.description || 'Detailed information about the bike',
-        
+
     };
 }
 

@@ -1,6 +1,5 @@
 import getAllBlogs from '@/lib/getAllBlogs';
 import Link from 'next/link';
-import React from 'react';
 
 export const metadata = {
     title: "Blog page",
