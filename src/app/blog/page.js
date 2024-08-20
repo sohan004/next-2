@@ -1,4 +1,4 @@
-import getAllBlogs from '@/lib/getAllBlogs';
+
 import Link from 'next/link';
 
 export const metadata = {
@@ -6,7 +6,7 @@ export const metadata = {
     description: "This is the blog page",
 }
 
-const Page = async () => {
+const Page =  () => {
     return (
         <div className='grid grid-cols-3 gap-3'>
             <h1>this is blog page</h1>
