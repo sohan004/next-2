@@ -20,14 +20,7 @@ const Page = async ({ params }) => {
             <h2 className='text-red-600'>{bike?.price}</h2>
             <p>{bike?.description}</p>
             <div>
-            {data.map((blog) => (
-                <Link href={`/blog/${blog.id}`} key={blog.id}>
-                    <div className='p-2 border hover:bg-slate-400'>
-                        <h2>{blog.name}</h2>
-                        <p>{blog.content}</p>
-                    </div>
-                </Link>
-            ))}
+          <p>{data[0].description}</p>
         </div>
         </div>
     );
