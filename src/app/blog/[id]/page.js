@@ -4,7 +4,7 @@ export async function generateMetadata({ params }) {
     const bike = await getSinglePost(params.id);
     return {
         title: bike?.name || 'Bike Details',
-        description: bike?.description || 'Detailed information about the bike',
+        description: bike?.description.slice(0, 160) || 'Detailed information about the bike',
 
     };
 }
