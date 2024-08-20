@@ -7,16 +7,10 @@ export const metadata = {
 }
 
 const Page = async () => {
-    const blogs = await getAllBlogs();
     return (
         <div className='grid grid-cols-3 gap-3'>
             <h1>this is blog page</h1>
-            {blogs.map((blog) => (
-                    <div key={blog.id} className='p-2 border hover:bg-slate-400'>
-                        <h2>{blog.name}</h2>
-                        <p>{blog.content}</p>
-                    </div>
-            ))}
+          
         </div>
     );
 };
