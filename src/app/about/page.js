@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const Page = async () => {
-    const blogs = await getAllBlogs();
+    const data = await getAllBlogs();
     return (
         <div>
-            {blogs.map((blog) => (
+            {data.map((blog) => (
                 <Link href={`/blog/${blog.id}`} key={blog.id}>
                     <div className='p-2 border hover:bg-slate-400'>
                         <h2>{blog.name}</h2>
