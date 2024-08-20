@@ -8,7 +8,6 @@ export const metadata = {
 
 const Page = async () => {
     const data = await allBlog();
-    console.log(data);
     return (
         <div>
             {data.map((blog) => (
