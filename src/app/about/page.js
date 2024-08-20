@@ -1,9 +1,13 @@
-import allBlog from "@/lib/allBlog";
 import Link from "next/link";
 
 export const metadata = {
     title: "About page",
     description: "This is the about page",
+};
+
+export const allBlog = async () => {
+    const res = await fetch("https://api.motoviewhub.com/api/filter/search/bike");
+    return await res.json();
 };
 
 const Page = async () => {
