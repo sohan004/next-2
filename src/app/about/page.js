@@ -1,4 +1,4 @@
-import getAllBlogs from "@/lib/getAllBlogs";
+import allBlog from "@/lib/allBlog";
 import Link from "next/link";
 
 export const metadata = {
@@ -7,23 +7,7 @@ export const metadata = {
 };
 
 const Page = async () => {
-    const data = [
-        {
-            id: 1,
-            name: "Blog 1",
-            content: "This is the first blog",
-        },
-        {
-            id: 2,
-            name: "Blog 2",
-            content: "This is the second blog",
-        },
-        {
-            id: 3,
-            name: "Blog 3",
-            content: "This is the third blog",
-        },
-    ]
+    const data = await allBlog();
     return (
         <div>
             {data.map((blog) => (
