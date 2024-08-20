@@ -7,7 +7,23 @@ export const metadata = {
 };
 
 const Page = async () => {
-    const data = await getAllBlogs();
+    const data = [
+        {
+            id: 1,
+            name: "Blog 1",
+            content: "This is the first blog",
+        },
+        {
+            id: 2,
+            name: "Blog 2",
+            content: "This is the second blog",
+        },
+        {
+            id: 3,
+            name: "Blog 3",
+            content: "This is the third blog",
+        },
+    ]
     return (
         <div>
             {data.map((blog) => (
