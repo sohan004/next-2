@@ -1,4 +1,3 @@
-import axios from "axios";
 import Link from "next/link";
 
 export const metadata = {
@@ -6,16 +5,20 @@ export const metadata = {
     description: "This is the about page",
 };
 
-export const allBlog = async () => {
-    const { data } = await axios("https://api.motoviewhub.com/api/filter/search/bike");
-    return await  data
+const fetchBlogs = async () => {
+    const response = await fetch("https://api.motoviewhub.com/api/filter/search/bike");
+    if (!response.ok) {
+        throw new Error("Failed to fetch data");
+    }
+    return response.json();
 };
 
 const Page = async () => {
-    const blog = await allBlog();
+    const blogs = await fetchBlogs();
+
     return (
         <div>
-            {blog.map((blog) => (
+            {blogs.map((blog) => (
                 <Link href={`/blog/${blog.id}`} key={blog.id}>
                     <div className='p-2 border hover:bg-slate-400'>
                         <h2>{blog.name}</h2>
